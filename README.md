@@ -36,7 +36,86 @@ guidance](./CONTRIBUTING.md).
 If you'd like to extend this demo or maintain a fork of it, read our
 [fork guidance](https://opentelemetry.io/docs/demo/forking/).
 
-## Quick start
+## CNAE quickstart 
+
+This version has the following changes:
+---
+Open the `.env` file.
+Change the `IMAGE_VERSION` and `DEMO_VERSION` to something that does not exist, e.g. `cnae-latest`to make sure it is not pulling images from a image repository.
+
+Search and replace in the `kubernetes/opentelemetry-demo.yaml` for `ghcr.io/open-telemetry/demo:2.0.2` and replace it with `ghcr.io/open-telemetry/demo:cnae-latest`.
+
+> 2.0.2 was the IMAGE_VERSION before it was changed. If you are on a different version, you have to search for a different version.
+---
+
+Make sure images are build within Minikube:
+
+```shell
+eval "$(minikube -p minikube docker-env)"
+```
+
+Then build the images:
+```shell
+docker compose build
+```
+
+Check that the images are correctly tagged with 
+```shell
+docker image ls
+```
+
+It should look like this:
+```
+REPOSITORY                                TAG                           IMAGE ID       CREATED              SIZE
+ghcr.io/open-telemetry/demo               cnae-latest-frontend-proxy    b3b149f4fb20   9 seconds ago        165MB
+ghcr.io/open-telemetry/demo               cnae-latest-load-generator    545dc2164884   20 seconds ago       1.61GB
+ghcr.io/open-telemetry/demo               cnae-latest-frontend          99bb68b6c2b2   About a minute ago   700MB
+ghcr.io/open-telemetry/demo               cnae-latest-checkout          95ad43af5261   2 minutes ago        30.3MB
+ghcr.io/open-telemetry/demo               cnae-latest-fraud-detection   a5b687ad4c8d   2 minutes ago        290MB
+ghcr.io/open-telemetry/demo               cnae-latest-shipping          c22a2e7f6eec   2 minutes ago        119MB
+ghcr.io/open-telemetry/demo               cnae-latest-currency          aa6e22c8a59f   2 minutes ago        107MB
+ghcr.io/open-telemetry/demo               cnae-latest-ad                06d748afa9ed   2 minutes ago        387MB
+ghcr.io/open-telemetry/demo               cnae-latest-flagd-ui          7619154a95d9   3 minutes ago        844MB
+ghcr.io/open-telemetry/demo               cnae-latest-recommendation    7361653f3e1f   3 minutes ago        188MB
+ghcr.io/open-telemetry/demo               cnae-latest-quote             929a2c0f9a45   3 minutes ago        539MB
+ghcr.io/open-telemetry/demo               cnae-latest-cart              281f877eed02   4 minutes ago        117MB
+ghcr.io/open-telemetry/demo               cnae-latest-accounting        b5889b83cce0   4 minutes ago        273MB
+ghcr.io/open-telemetry/demo               cnae-latest-product-catalog   038d3f811157   4 minutes ago        27.6MB
+ghcr.io/open-telemetry/demo               cnae-latest-email             72622de4e993   4 minutes ago        223MB
+ghcr.io/open-telemetry/demo               cnae-latest-payment           444df0f888ff   5 minutes ago        204MB
+ghcr.io/open-telemetry/demo               cnae-latest-image-provider    5d6312a457fc   6 minutes ago        222MB
+ghcr.io/open-telemetry/demo               cnae-latest-kafka             4d0154e5b0ca   6 minutes ago        392MB
+```
+
+
+Then create the kubernetes deployment:
+
+```shell
+kubectl create -f kubernetes/opentelemetry-demo.yaml -n otel-demo
+```
+
+Open the Frontend via
+
+```shell
+minikube service frontend-proxy -n otel-demo
+```
+
+### Other remarks
+
+Make sure to use 
+
+```shell
+kubectl create
+```
+instead of 
+```shell
+kubectl apply
+```
+
+Make sure to deploy it in the namespace `otel-demo` as some parts are hardcoded to it.
+
+---
+## Original Documentation below
 
 You can be up and running with the demo in a few minutes. Check out the docs for
 your preferred deployment method:
