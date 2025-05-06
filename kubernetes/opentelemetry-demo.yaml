@@ -11341,7 +11341,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: accounting
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-accounting'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-accounting'
           imagePullPolicy: IfNotPresent
           env:
             - name: OTEL_SERVICE_NAME
@@ -11404,7 +11404,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: ad
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-ad'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-ad'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -11470,7 +11470,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: cart
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-cart'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-cart'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -11546,7 +11546,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: checkout
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-checkout'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-checkout'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -11631,7 +11631,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: currency
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-currency'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-currency'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -11693,7 +11693,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: email
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-email'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-email'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -11795,7 +11795,7 @@ spec:
             - name: config-rw
               mountPath: /etc/flagd
         - name: flagd-ui
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-flagd-ui'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-flagd-ui'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -11874,7 +11874,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: fraud-detection
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-fraud-detection'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-fraud-detection'
           imagePullPolicy: IfNotPresent
           env:
             - name: OTEL_SERVICE_NAME
@@ -11941,7 +11941,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: frontend
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-frontend'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-frontend'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -12031,7 +12031,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: frontend-proxy
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-frontend-proxy'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-frontend-proxy'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -12127,7 +12127,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: image-provider
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-image-provider'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-image-provider'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -12189,7 +12189,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: kafka
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-kafka'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-kafka'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -12257,7 +12257,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: load-generator
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-load-generator'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-load-generator'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -12337,7 +12337,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: payment
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-payment'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-payment'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -12405,7 +12405,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: product-catalog
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-product-catalog'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-product-catalog'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -12476,7 +12476,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: quote
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-quote'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-quote'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -12542,7 +12542,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: recommendation
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-recommendation'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-recommendation'
           imagePullPolicy: IfNotPresent
           ports:
             
@@ -12612,7 +12612,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: shipping
-          image: 'ghcr.io/open-telemetry/demo:2.0.2-shipping'
+          image: 'ghcr.io/open-telemetry/demo:cnae-latest-shipping'
           imagePullPolicy: IfNotPresent
           ports:
             
